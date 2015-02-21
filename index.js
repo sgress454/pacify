@@ -10,11 +10,11 @@ var convertAllowableBadCharsToEnglish = function(string) {
       var transformed = '';
       var previousChar = chars[index - 1];
       var nextChar = chars[index + 1];
-      if (previousChar && previousChar != '_' && !mapping[previousChar]) {
+      if (previousChar && !mapping[previousChar]) {
         transformed += '_';
       }
       transformed += mapping[char];
-      if (nextChar && nextChar != '_' && !mapping[nextChar]) {
+      if (nextChar) {
         transformed += '_';
       }
       return transformed;
