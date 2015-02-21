@@ -1,6 +1,6 @@
 {
   "name": "pacify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Convert unruly characters to their English-language equivalents.",
   "main": "index.js",
   "scripts": {
