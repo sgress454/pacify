@@ -1,7 +1,9 @@
 var mapping = require('./allowable-bad-characters');
 
 var convertAllowableBadCharsToEnglish = function(string) {
-      
+
+  if (typeof string !== 'string') {throw new Error("Input must be a string!");}
+
   var chars = string.split('');
   return chars.map(function(char, index) {
     if (mapping[char]) {
