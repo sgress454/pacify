@@ -1,7 +1,9 @@
 var mapping = require('./allowable-bad-characters');
 
-var convertAllowableBadCharsToEnglish = function(string) {
+var convertAllowableBadCharsToEnglish = function(string, delimiter) {
 
+  delimiter = delimiter || '_';
+  
   if (typeof string !== 'string') {throw new Error("Input must be a string!");}
 
   var chars = string.split('');
@@ -11,11 +13,11 @@ var convertAllowableBadCharsToEnglish = function(string) {
       var previousChar = chars[index - 1];
       var nextChar = chars[index + 1];
       if (previousChar && !mapping[previousChar]) {
-        transformed += '_';
+        transformed += delimiter;
       }
       transformed += mapping[char];
       if (nextChar) {
-        transformed += '_';
+        transformed += delimiter;
       }
       return transformed;
     } else {
